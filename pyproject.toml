@@ -1,0 +1,38 @@
+[project]
+name = "itc-topic-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bertopic>=0.17.3",
+    "dspy>=3.0.4",
+    "fastexcel>=0.18.0",
+    "polars>=1.35.2",
+    "scikit-learn>=1.7.2",
+    "sentence-transformers>=5.1.2",
+    "transformers>=4.57.2",
+    "umap-learn>=0.5.9.post2",
+    "torch",
+    "torchvision",
+    "marimo>=0.18.0",
+    "ipython>=9.7.0",
+    "altair>=6.0.0",
+    "pyarrow>=22.0.0",
+    "google-genai>=1.52.0",
+    "vl-convert-python>=1.8.0",
+    "xlsxwriter>=3.2.9",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
